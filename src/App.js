@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Home from './routes/home/Home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Shop from './components/Shop';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import Checkout from './components/Checkout/Checkout';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Navbar should not be a route, it should be a part of the layout */}
+        <Route element={<Navbar />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="shop/*" element={<Shop />} />
+        <Route path="/" element={<SignIn />} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="checkout" element={<Checkout />} />
+        {/* Catch-all route should be placed at the end */}
+        {/* <Route path="/*" element={<NotFound />} /> */}
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
