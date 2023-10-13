@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { signInGoogleWithPopup, createUserDocFromAuth, signInAuthUserWithEmailAndPassword } from '../utils/Firebase';
 import { Link, useNavigate } from 'react-router-dom';
-import view from '../assets/view.png'; // Import the view image
-import hide from '../assets/hide.png'; // Import the hide image
+import view from '../assets/view.png'; 
+import hide from '../assets/hide.png'; 
 import Navbar from './Navbar';
 
 const defaultFormFields = {

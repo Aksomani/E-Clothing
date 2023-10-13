@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <Fragment>
       <div className=' m-2 flex justify-between'>
-          <Link to='/'>
+          <Link to='/home'>
             <img className='w-20 h-14 mx-2' src={Logo} alt='Logo'/>
           </Link>
           <div className='mx-2 flex justify-between items-center'>
